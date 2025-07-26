@@ -1,0 +1,53 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: nop # First instruction does not execute
+10000000 
+
+# 0x0004: li 	 $s0, TERM 									# Address of the terminal output for memory-mapped I/O
+0a01ff10 
+
+# 0x0008: li 	 $s1, KBD 									# Address of the keyboard input for memory-mapped I/O
+0b01ff20 
+
+# 0x000c: li 	 $s2, NEWLINE								# Load in newline character
+0c01000a 
+
+# 0x0010: li 	 $sp, STACK_TOP							# Predefined initial stack address
+0e01f800 
+
+# 0x0014: jal  reverse_input							# Call the procedure reverse_input()
+ff03001c 
+
+# 0x0018: j 	 HALT 											# Enable halt pin and stop the PC incrementing
+f001ff00 
+
+# 0x001c: lb 	 $t0, 0($s1)								# Load a character from the keyboard
+96b10000 
+
+# 0x0020: beq  $t0, $zero, reverse_input	# If it is the null terminator, start over
+d601001c 
+
+# 0x0024: beq  $t0, $s2, exit_rev					# If the character was the newline, stop looping
+d6c10050 
+
+# 0x0028: push $ra												# Store the return address
+1ee10002 cfe10000 
+
+# 0x0030: push $t0												# Store the current character
+1ee10002 c6e10000 
+
+# 0x0038: jal  reverse_input							# Continue to the next character
+ff03001c 
+
+# 0x003c: pop	 $t0												# Load the character
+a6e10000 0ee10002 
+
+# 0x0044: pop	 $ra												# Load the return address
+afe10000 0ee10002 
+
+# 0x004c: sb 	 $t0, 0($s0)								# Print the character
+b6a10000 
+
+# 0x0050: jr 	 $ra												# Return to caller
+f000f000 

@@ -1,0 +1,35 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: ori $t0, $zero, 1  # Load 1 into $t0
+36010001 
+
+# 0x0004: ori $t1, $t0, 2    # Store $t0 or 2 into $t1 == 3 (0x1)
+37610002 
+
+# 0x0008: ori $t2, $t1, 4    # Store $t1 or 4 into $t2 == 7 (0x2)
+38710004 
+
+# 0x000c: ori $t3, $t2, 8    # Store $t2 or 8 into $t3 == 15 (0x3)
+39810008 
+
+# 0x0010: li $s0, 1         # Load a 1 into $s0
+0a010001 
+
+# 0x0014: li $s1, 3         # Load a 3 into $s1
+0b010003 
+
+# 0x0018: li $s2, 7         # Load a 7 into $s2
+0c010007 
+
+# 0x001c: li $s3, 15        # Load a 15 into $s3
+0d01000f 
+
+# 0x0020: or $s1, $s0, $s1  # Store $s0 or $s1 into $s1 == 3  (0x3)
+3ba0b000 
+
+# 0x0024: or $s2, $s1, $s2  # Store $s1 or $s2 into $s2 == 7  (0x7)
+3cb0c000 
+
+# 0x0028: or $s3, $s2, $s3  # Store $s2 or $s3 into $s3 == 15 (0xF)
+3dc0d000 

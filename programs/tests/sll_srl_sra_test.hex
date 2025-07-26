@@ -1,0 +1,26 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: li $s0, 1         # Load 0000 0000 0000 0001
+0a010001 
+
+# 0x0004: li $s1, 0x8001    # Load 1000 0000 0000 0001
+0b018001 
+
+# 0x0008: sll $t0, $s0, 1   # Store $s0 << 1 into $t0 == 0000 0000 0000 0010 (0x0002)
+0600a401 
+
+# 0x000c: srl $t1, $s0, 1   # Store $s0 >> 1 into $t1 == 0000 0000 0000 0000 (0x0000)
+0700a801 
+
+# 0x0010: sra $t2, $s0, 1   # Store $s0 >> 1 into $t2 == 0000 0000 0000 0000 (0x0000)
+0800ac01 
+
+# 0x0014: sll $t0, $s1, 1   # Store $s0 << 1 into $t0 == 0000 0000 0000 0010 (0x0002)
+0600b401 
+
+# 0x0018: srl $t1, $s1, 1   # Store $s0 >> 1 into $t1 == 0100 0000 0000 0000 (0x4000)
+0700b801 
+
+# 0x001c: sra $t2, $s1, 1   # Store $s0 >> 1 into $t2 == 1100 0000 0000 0000 (0xc000)
+0800bc01 

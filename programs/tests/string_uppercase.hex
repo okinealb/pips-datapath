@@ -1,0 +1,62 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: nop # First instruction does not execute
+10000000 
+
+# 0x0004: li 	 $s0, TERM 				# Address of the terminal output for memory-mapped I/O
+0a01ff10 
+
+# 0x0008: li 	 $s1, KBD 				# Address of the keyboard input for memory-mapped I/O
+0b01ff20 
+
+# 0x000c: li 	 $s2, NEWLINE			# Load in newline character
+0c01000a 
+
+# 0x0010: li 	 $sp, STACK_TOP		# Predefined initial stack address
+0e01f800 
+
+# 0x0014: lb 	 $t0, 0($s1)				# Load a character from the keyboard
+96b10000 
+
+# 0x0018: beq  $t0, $zero, loop		# If it is the null terminator, start over
+d6010014 
+
+# 0x001c: addi $a0, $t0, 0				# Move the character to the input register
+02610000 
+
+# 0x0020: jal  upper							# Call the procedure upper(character)
+ff030034 
+
+# 0x0024: sb   $v0, 0($s0)        # Write the output character to the terminal
+b1a10000 
+
+# 0x0028: beq  $v0, $s2, end			# If the character was the newline, stop looping
+d1c10030 
+
+# 0x002c: j 	 loop								# Start over
+f0010014 
+
+# 0x0030: j 	 HALT 							# Enable halt pin and stop the PC incrementing
+f001ff00 
+
+# 0x0034: li   $t0, 'a'            	# Load in 'a' character
+06010061 
+
+# 0x0038: li   $t1, 'z'            	# Load in 'z' character
+0701007a 
+
+# 0x003c: bgt! $t0, $a0, exit_uppr  # Branch if (char < 'a'), modifies $t0
+76206000 e6010050 
+
+# 0x0044: blt! $t1, $a0, exit_uppr  # Branch if (char > 'z'), modifies $t1
+77702000 e7010050 
+
+# 0x004c: subi $a0, $a0, 32 				# Uppercase the letter
+12210020 
+
+# 0x0050: addi $v0, $a0, 0					# Move the result to output register
+01210000 
+
+# 0x0054: jr 	 $ra									# Return to caller
+f000f000 

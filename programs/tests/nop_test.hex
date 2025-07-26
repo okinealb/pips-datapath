@@ -1,0 +1,8 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: li   $v0,  2       # This is to make sure nop works
+01010002 
+
+# 0x0004: nop  # No operation (verify that no registers are different)
+01100000 

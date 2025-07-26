@@ -1,0 +1,296 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: addi $t0, $zero, 0  # Load zero into $t0
+06010000 
+
+# 0x0004: addi $t1, $t0, 1    # Store $t0+1 into $t1 == 1 (0x1)
+07610001 
+
+# 0x0008: addi $t2, $t1, 1    # Store $t1+1 into $t2 == 2 (0x2)
+08710001 
+
+# 0x000c: addi $t3, $t2, 1    # Store $t2+1 into $t3 == 3 (0x3)
+09810001 
+
+# 0x0010: li $s0, 3          # Load a 3 into $s0
+0a010003 
+
+# 0x0014: add $s1, $s0, $s0  # Store $s0 + $s0 into $s1 == 6
+0ba0a000 
+
+# 0x0018: add $s2, $s1, $s1  # Store $s1 + $s1 into $s2 == 12 (0xC)
+0cb0b000 
+
+# 0x001c: add $s3, $s2, $s2  # Store $s2 + $s2 into $s3 == 24 (0x18)
+0dc0c000 
+
+# 0x0020: li $t0, 1          # Load a 1 into $t0
+06010001 
+
+# 0x0024: andi $t1, $t0, 3   # Store $t0 andi $t1 into $t1 == 1  (0x1)
+27610003 
+
+# 0x0028: andi $t2, $t1, 7   # Store $t1 andi $t2 into $t2 == 1  (0x1)
+28710007 
+
+# 0x002c: andi $t3, $t2, 15  # Store $t2 andi $t3 into $t3 == 1  (0x1)
+2981000f 
+
+# 0x0030: li $s0, 1         # Load a 1 into $s0
+0a010001 
+
+# 0x0034: li $s1, 3         # Load a 3 into $s1
+0b010003 
+
+# 0x0038: li $s2, 7         # Load a 7 into $s2
+0c010007 
+
+# 0x003c: li $s3, 15        # Load a 15 into $s3
+0d01000f 
+
+# 0x0040: and $s1, $s0, $s1  # Store $s0 and $s1 into $s1 == 1  (0x1)
+2ba0b000 
+
+# 0x0044: and $s2, $s1, $s2  # Store $s1 and $s2 into $s2 == 1  (0x1)
+2cb0c000 
+
+# 0x0048: and $s3, $s2, $s3  # Store $s2 and $s3 into $s3 == 1  (0x1)
+2dc0d000 
+
+# 0x004c: nandi $t0, $zero, 0  # Store $zero nandi 2 into $t1 == -(2^15) (0xFFFF)
+46010000 
+
+# 0x0050: nandi $t1, $zero, 1  # Store $zero nandi 2 into $t1 == -(2^15) (0xFFFF)
+47010001 
+
+# 0x0054: nandi $t2, $zero, 2  # Store $zero nandi 4 into $t2 == -(2^15) (0xFFFF)
+48010002 
+
+# 0x0058: nandi $t3, $zero, 4  # Store $zero nandi 8 into $t3 == -(2^15) (0xFFFF)
+49010004 
+
+# 0x005c: li $s0, 1         # Load a 1 into $s0
+0a010001 
+
+# 0x0060: li $s1, 3         # Load a 3 into $s1
+0b010003 
+
+# 0x0064: li $s2, 7         # Load a 7 into $s2
+0c010007 
+
+# 0x0068: li $s3, 15        # Load a 15 into $s3
+0d01000f 
+
+# 0x006c: nand $s0, $zero, $s0  # Store $zero nand $s0 into $s0 == -(2^15) (0xFFFE)
+4a00a000 
+
+# 0x0070: nand $s1, $zero, $s1  # Store $zero nand $s1 into $s1 == -(2^15) (0xFFFF)
+4b00b000 
+
+# 0x0074: nand $s2, $zero, $s2  # Store $zero nand $s2 into $s2 == -(2^15) (0xFFFF)
+4c00c000 
+
+# 0x0078: nand $s3, $zero, $s3  # Store $zero nand $s3 into $s3 == -(2^15) (0xFFFF)
+4d00d000 
+
+# 0x007c: li   $v0,  2       # This is to make sure nop works
+01010002 
+
+# 0x0080: nop  # No operation (verify that no registers are different)
+01100000 
+
+# 0x0084: nori $s0, $zero, 1  # Store $zero nori $s0 into $s0 == -(2^15) + 1 (0xFFFE)
+5a010001 
+
+# 0x0088: nori $s1, $zero, 2  # Store $zero nori $s1 into $s1 == -(2^15) + 2 (0xFFFD)
+5b010002 
+
+# 0x008c: nori $s2, $zero, 4  # Store $zero nori $s2 into $s2 == -(2^15) + 4 (0xFFFB)
+5c010004 
+
+# 0x0090: nori $s3, $zero, 8  # Store $zero nori $s3 into $s3 == -(2^15) + 8 (0xFFF7)
+5d010008 
+
+# 0x0094: li $s0, 1         # Load a 1 into $s0
+0a010001 
+
+# 0x0098: li $s1, 3         # Load a 3 into $s1
+0b010003 
+
+# 0x009c: li $s2, 7         # Load a 7 into $s2
+0c010007 
+
+# 0x00a0: li $s3, 15        # Load a 15 into $s3
+0d01000f 
+
+# 0x00a4: nor $s0, $zero, $s0  # Store $zero nor $s0 into $s0 == -(2^15) + 1 (0xFFFE)
+5a00a000 
+
+# 0x00a8: nor $s1, $zero, $s1  # Store $zero nor $s1 into $s1 == -(2^15) + 3 (0xFFFC)
+5b00b000 
+
+# 0x00ac: nor $s2, $zero, $s2  # Store $zero nor $s2 into $s2 == -(2^15) + 7 (0xFFF8)
+5c00c000 
+
+# 0x00b0: nor $s3, $zero, $s3  # Store $zero nor $s3 into $s3 == -(2^15) + 15 (0xFFF0)
+5d00d000 
+
+# 0x00b4: ori $t0, $zero, 1  # Load 1 into $t0
+36010001 
+
+# 0x00b8: ori $t1, $t0, 2    # Store $t0 or 2 into $t1 == 3 (0x1)
+37610002 
+
+# 0x00bc: ori $t2, $t1, 4    # Store $t1 or 4 into $t2 == 7 (0x2)
+38710004 
+
+# 0x00c0: ori $t3, $t2, 8    # Store $t2 or 8 into $t3 == 15 (0x3)
+39810008 
+
+# 0x00c4: li $s0, 1         # Load a 1 into $s0
+0a010001 
+
+# 0x00c8: li $s1, 3         # Load a 3 into $s1
+0b010003 
+
+# 0x00cc: li $s2, 7         # Load a 7 into $s2
+0c010007 
+
+# 0x00d0: li $s3, 15        # Load a 15 into $s3
+0d01000f 
+
+# 0x00d4: or $s1, $s0, $s1  # Store $s0 or $s1 into $s1 == 3  (0x3)
+3ba0b000 
+
+# 0x00d8: or $s2, $s1, $s2  # Store $s1 or $s2 into $s2 == 7  (0x7)
+3cb0c000 
+
+# 0x00dc: or $s3, $s2, $s3  # Store $s2 or $s3 into $s3 == 15 (0xF)
+3dc0d000 
+
+# 0x00e0: slti $s0, $zero, -1      # Store $zero < -1 into $s0 == 0 (0x0)
+7a01ffff 
+
+# 0x00e4: slti $s1, $zero, 1       # Store $zero < 1 into  $s1 == 1 (0x1)
+7b010001 
+
+# 0x00e8: slti $s2, $zero, 0x8000  # Store $zero < -32768 into $s2 == 0 (0x0)
+7c018000 
+
+# 0x00ec: slti $s3, $zero, 0x7FFF   # Store $zero < 32767 into  $s3 == 1 (0x1)
+7d017fff 
+
+# 0x00f0: li    $t3, 0xFFFE
+0901fffe 
+
+# 0x00f4: sltiu $t0, $t3, 0  # Store $t3 < 0 into $t0 == 0 (0x0)
+86910000 
+
+# 0x00f8: sltiu $t1, $t3, 1  # Store $t3 < 1 into $t1 == 0 (0x0)
+87910001 
+
+# 0x00fc: sltiu $t2, $t3, 0xFFFF  # Store $t3 < 65535 into $t2 == 1 (0x1)
+8891ffff 
+
+# 0x0100: sltiu $t3, $t3, 0xFFFE  # Store $t3 <  into $t3 == 0 (0x1)
+8991fffe 
+
+# 0x0104: li $s0, -1        # Load a -1 into $s0
+0a01ffff 
+
+# 0x0108: li $s1,  1        # Load a  1 into $s1
+0b010001 
+
+# 0x010c: li $s2, 0x8000    # Load a -32768 into $s2
+0c018000 
+
+# 0x0110: li $s3, 0x7FFF     # Load a  32767 into $s3
+0d017fff 
+
+# 0x0114: slt $s0, $zero, $s0  # Store $zero < $s0 into $s0 == 0 (0x0)
+7a00a000 
+
+# 0x0118: slt $s1, $zero, $s1  # Store $zero < $s1 into $s1 == 1 (0x0)
+7b00b000 
+
+# 0x011c: slt $s2, $zero, $s2  # Store $zero < $s2 into $s2 == 0 (0x1)
+7c00c000 
+
+# 0x0120: slt $s3, $zero, $s3  # Store $zero < $s3 into $s3 == 1 (0x1)
+7d00d000 
+
+# 0x0124: li $s0, 0        # Load a 0 into $s0
+0a010000 
+
+# 0x0128: li $s1, 1        # Load a 1 into $s1
+0b010001 
+
+# 0x012c: li $s2, 0xFFFF   # Load a 65535 into $s2
+0c01ffff 
+
+# 0x0130: li $s3, 0xFFF8   # Load a  65528 into $s3
+0d01fff8 
+
+# 0x0134: sltu $s0, $s3, $s0  # Store $s3 < $s0 into $s0 == 0 (0x0)
+8ad0a000 
+
+# 0x0138: sltu $s1, $s3, $s1  # Store $s3 < $s1 into $s1 == 0 (0x0)
+8bd0b000 
+
+# 0x013c: sltu $s2, $s3, $s2  # Store $s3 < $s2 into $s2 == 1 (0x1)
+8cd0c000 
+
+# 0x0140: sltu $s3, $s3, $s3  # Store $s3 < $s3 into $s3 == 0 (0x1)
+8dd0d000 
+
+# 0x0144: li $s0, 24          # Load a 3 into $s0
+0a010018 
+
+# 0x0148: li $s1, 4
+0b010004 
+
+# 0x014c: sub $s0, $s0, $s1  # Store $s0 - $s0 into $s1 == 20 (0x14)
+1aa0b000 
+
+# 0x0150: sub $s2, $s0, $s1  # Store $s1 + $s1 into $s2 == 16 (0x01)
+1ca0b000 
+
+# 0x0154: sub $s3, $s0, $s1  # Store $s2 + $s2 into $s3 == 12 (0x0c)
+1da0b000 
+
+# 0x0158: xori $s0, $zero, 1  # Store $zero xor $s0 into $s0 == 1 (0x1)
+6a010001 
+
+# 0x015c: xori $s1, $zero, 3  # Store $zero xor $s1 into $s1 == 3 (0x3)
+6b010003 
+
+# 0x0160: xori $s2, $zero, 7  # Store $zero xor $s2 into $s2 == 7 (0x7)
+6c010007 
+
+# 0x0164: xori $s3, $zero, 15 # Store $zero xor $s3 into $s3 == 15 (0xF)
+6d01000f 
+
+# 0x0168: li $s0, 1         # Load a 1 into $s0
+0a010001 
+
+# 0x016c: li $s1, 2         # Load a 2 into $s1
+0b010002 
+
+# 0x0170: li $s2, 4         # Load a 4 into $s2
+0c010004 
+
+# 0x0174: li $s3, 8         # Load a 8 into $s3
+0d010008 
+
+# 0x0178: xor $s0, $zero, $s0  # Store $zero xor $s0 into $s0 == 1 (0x1)
+6a00a000 
+
+# 0x017c: xor $s1, $zero, $s1  # Store $zero xor $s1 into $s1 == 2 (0x2)
+6b00b000 
+
+# 0x0180: xor $s2, $zero, $s2  # Store $zero xor $s2 into $s2 == 4 (0x4)
+6c00c000 
+
+# 0x0184: xor $s3, $zero, $s3  # Store $zero xor $s3 into $s3 == 8 (0x8)
+6d00d000 

@@ -1,0 +1,26 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: addi $t0, $zero, 0  # Load zero into $t0
+06010000 
+
+# 0x0004: addi $t1, $t0, 1    # Store $t0+1 into $t1 == 1 (0x1)
+07610001 
+
+# 0x0008: addi $t2, $t1, 1    # Store $t1+1 into $t2 == 2 (0x2)
+08710001 
+
+# 0x000c: addi $t3, $t2, 1    # Store $t2+1 into $t3 == 3 (0x3)
+09810001 
+
+# 0x0010: li $s0, 3          # Load a 3 into $s0
+0a010003 
+
+# 0x0014: add $s1, $s0, $s0  # Store $s0 + $s0 into $s1 == 6
+0ba0a000 
+
+# 0x0018: add $s2, $s1, $s1  # Store $s1 + $s1 into $s2 == 12 (0xC)
+0cb0b000 
+
+# 0x001c: add $s3, $s2, $s2  # Store $s2 + $s2 into $s3 == 24 (0x18)
+0dc0c000 

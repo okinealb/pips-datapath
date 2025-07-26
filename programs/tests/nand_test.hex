@@ -1,0 +1,26 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: li $s0, 1         # Load a 1 into $s0
+0a010001 
+
+# 0x0004: li $s1, 3         # Load a 3 into $s1
+0b010003 
+
+# 0x0008: li $s2, 7         # Load a 7 into $s2
+0c010007 
+
+# 0x000c: li $s3, 15        # Load a 15 into $s3
+0d01000f 
+
+# 0x0010: nand $s0, $zero, $s0  # Store $zero nand $s0 into $s0 == -(2^15) (0xFFFE)
+4a00a000 
+
+# 0x0014: nand $s1, $zero, $s1  # Store $zero nand $s1 into $s1 == -(2^15) (0xFFFF)
+4b00b000 
+
+# 0x0018: nand $s2, $zero, $s2  # Store $zero nand $s2 into $s2 == -(2^15) (0xFFFF)
+4c00c000 
+
+# 0x001c: nand $s3, $zero, $s3  # Store $zero nand $s3 into $s3 == -(2^15) (0xFFFF)
+4d00d000 

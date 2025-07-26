@@ -1,0 +1,12 @@
+Lab: Build a Datapath III
+
+Academic honesty certification:
+  Written/online sources used:
+    None
+  Help obtained
+    Professor Weinman, in checking the correctness and
+        faithfulness of our procedures
+  Our initials below confirm that the above list of sources
+  is complete AND that I/we have not talked to anyone else
+  (e.g., CSC 211 students) about the solution to this problem
+  Initials: RH, AO

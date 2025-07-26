@@ -1,0 +1,101 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: nop
+11100000 
+
+# 0x0004: li   $sp, 0xf800    # Set up the stack
+0e01f800 
+
+# 0x0008: li   $a0, 46       # Set first input m = 46
+0201002e 
+
+# 0x000c: li   $a1, 15        # Set second input n = 15
+0301000f 
+
+# 0x0010: jal  gcd            # Call procedure gcd(46,15)
+ff03002c 
+
+# 0x0014: addi $t0, $v0, 0    # Move result to input
+06110000 
+
+# 0x0018: addi $a0, $v0, 0    # Move result to input
+02110000 
+
+# 0x001c: li   $a1, 15
+0301000f 
+
+# 0x0020: jal  gcd            # Call procedure gcd(1, 15)
+ff03002c 
+
+# 0x0024: addi $t1, $v0, 0    # Move result to input
+07110000 
+
+# 0x0028: j    end            # end program
+f0010080 
+
+# 0x002c: addi $sp, $sp, -8		# Make room on the stack
+0ee1fff8 
+
+# 0x0030: sb   $ra, 4($sp)		# Store the return address
+bfe10004 
+
+# 0x0034: sb   $a1, 0($sp)		# Store the input n
+b3e10000 
+
+# 0x0038: beq $a1, $zero, exit_gcd 		# Branch if we have the base case
+d3010058 
+
+# 0x003c: jal  remainder 		    # Call the remainder procedure
+ff030068 
+
+# 0x0040: lb   $a0, 0($sp) 		# Set m = n
+92e10000 
+
+# 0x0044: addi $a1, $v0, 0			# Set n = remainder(m,n)
+03110000 
+
+# 0x0048: jal  gcd 			# gcd(n, remainder(m,n))
+ff03002c 
+
+# 0x004c: lb   $ra, 4($sp)		# Load the return address
+9fe10004 
+
+# 0x0050: addi $sp, $sp, 8 		# Restore the stack pointer
+0ee10008 
+
+# 0x0054: jr   $ra			# Return to caller
+f000f000 
+
+# 0x0058: lb   $ra, 4($sp)		# Load the return address
+9fe10004 
+
+# 0x005c: addi $sp, $sp, 8 		# Restore the stack pointer
+0ee10008 
+
+# 0x0060: addi $v0, $a0, 0 		# Store the result
+01210000 
+
+# 0x0064: jr   $ra                      # Return to caller
+f000f000 
+
+# 0x0068: j    if_rem			# Branch to beginning of loop
+f0010070 
+
+# 0x006c: sub  $a0, $a0, $a1 		# a = a - b
+12203000 
+
+# 0x0070: slt  $t0, $a0, $a1 		# (a < b) = !(a >= b)
+76203000 
+
+# 0x0074: beq $t0, $zero, loop_rem 		# Branch if terminating condition
+d601006c 
+
+# 0x0078: addi $v0, $a0, 0 		  # Move 'a' into the result
+01210000 
+
+# 0x007c: jr   $ra			# Return to caller
+f000f000 
+
+# 0x0080: nop          # ending the program
+11100000 

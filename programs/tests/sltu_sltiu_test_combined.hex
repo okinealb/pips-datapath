@@ -1,0 +1,41 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: li    $t3, 0xFFFE
+0901fffe 
+
+# 0x0004: sltiu $t0, $t3, 0  # Store $t3 < 0 into $t0 == 0 (0x0)
+86910000 
+
+# 0x0008: sltiu $t1, $t3, 1  # Store $t3 < 1 into $t1 == 0 (0x0)
+87910001 
+
+# 0x000c: sltiu $t2, $t3, 0xFFFF  # Store $t3 < 65535 into $t2 == 1 (0x1)
+8891ffff 
+
+# 0x0010: sltiu $t3, $t3, 0xFFFE  # Store $t3 <  into $t3 == 0 (0x1)
+8991fffe 
+
+# 0x0014: li $s0, 0        # Load a 0 into $s0
+0a010000 
+
+# 0x0018: li $s1, 1        # Load a 1 into $s1
+0b010001 
+
+# 0x001c: li $s2, 0xFFFF   # Load a 65535 into $s2
+0c01ffff 
+
+# 0x0020: li $s3, 0xFFF8   # Load a  65528 into $s3
+0d01fff8 
+
+# 0x0024: sltu $s0, $s3, $s0  # Store $s3 < $s0 into $s0 == 0 (0x0)
+8ad0a000 
+
+# 0x0028: sltu $s1, $s3, $s1  # Store $s3 < $s1 into $s1 == 0 (0x0)
+8bd0b000 
+
+# 0x002c: sltu $s2, $s3, $s2  # Store $s3 < $s2 into $s2 == 1 (0x1)
+8cd0c000 
+
+# 0x0030: sltu $s3, $s3, $s3  # Store $s3 < $s3 into $s3 == 0 (0x1)
+8dd0d000 

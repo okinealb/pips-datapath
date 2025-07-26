@@ -1,0 +1,197 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: nop # First instruction does not execute
+10000000 
+
+# 0x0004: li 	 $s0, TERM 				# Address of the terminal output for memory-mapped I/O
+0a01ff10 
+
+# 0x0008: li 	 $s1, KBD 				# Address of the keyboard input for memory-mapped I/O
+0b01ff20 
+
+# 0x000c: li 	 $s2, NEWLINE			# Load in newline character
+0c01000a 
+
+# 0x0010: li 	 $s3, 0						# command = false, wait for first input
+0d010000 
+
+# 0x0014: li 	 $sp, STACK_TOP		# Predefined initial stack address
+0e01f800 
+
+# 0x0018: lb 	 $t0, 0($s1)				# Load a character from the keyboard
+96b10000 
+
+# 0x001c: beq  $t0, $zero, loop		# If it is the null terminator, start over
+d6010018 
+
+# 0x0020: li 	 $t1, '+'					      # Load in '+' character
+0701002b 
+
+# 0x0024: beq  $t0, $t1, if_plus	    # Branch if on the plus sign character
+d6710040 
+
+# 0x0028: beq  $t0, $s2, if_newline	  # Branch if on the newline character
+d6c1004c 
+
+# 0x002c: beq  $s3, $zero, if_first		# Branch and set first input (before 1st input)
+dd010034 
+
+# 0x0030: bne  $s3, $zero, if_second	# Branch and set second input (after 1st input)
+ed010044 
+
+# 0x0034: addi $a0, $t0, 0				    # Set the first input
+02610000 
+
+# 0x0038: li 	 $s3, 1									# command = true, wait for plus and second input
+0d010001 
+
+# 0x003c: j 	 loop						    		# Start over
+f0010018 
+
+# 0x0040: j 	 loop						    		# Start over
+f0010018 
+
+# 0x0044: addi $a1, $t0, 0				    # Set the second input
+03610000 
+
+# 0x0048: j 	 loop			          		# Start over
+f0010018 
+
+# 0x004c: beq  $s3, $zero, end				# Branch to end if there is no command
+dd010068 
+
+# 0x0050: li   $s3, 0                 # command = false, resetting the calculator
+0d010000 
+
+# 0x0054: jal  sum						        # Call the procedure sum(first,second)
+ff03006c 
+
+# 0x0058: addi $a0, $v0, 0            # Move the sum result into input register
+02110000 
+
+# 0x005c: jal  print_decimal_number   # Call the procedure print_decimal_number(sum)
+ff03007c 
+
+# 0x0060: sb   $s2, 0($s0)      	    # Print newline
+bca10000 
+
+# 0x0064: j 	 loop						    		# Start over
+f0010018 
+
+# 0x0068: j 	 HALT 							    # Enable halt pin and stop the PC incrementing
+f001ff00 
+
+# 0x006c: subi $t0, $a0, ZERO		# Convert the first input to an integer
+16210030 
+
+# 0x0070: subi $t1, $a1, ZERO		# Convert the second input to an integer
+17310030 
+
+# 0x0074: add  $v0, $t0, $t1		# Return the sum in the output register
+01607000 
+
+# 0x0078: jr   $ra              # Return to caller
+f000f000 
+
+# 0x007c: bne  $a0, $zero, else_prnt  # Branch if in recursive case
+e201008c 
+
+# 0x0080: li   $t0, ZERO              # Load in '0' character
+06010030 
+
+# 0x0084: sb   $t0, 0($s0)            # Print '0'
+b6a10000 
+
+# 0x0088: jr   $ra                    # Return to caller
+f000f000 
+
+# 0x008c: push $ra                    # Store the return address
+1ee10002 cfe10000 
+
+# 0x0094: push $a0                    # Store the input
+1ee10002 c2e10000 
+
+# 0x009c: li   $a1, 10                # Set the second input
+0301000a 
+
+# 0x00a0: jal  remainder              # Call procedure remainder(n,10)
+ff0300e8 
+
+# 0x00a4: pop  $a0                    # Load the input from the stack
+a2e10000 0ee10002 
+
+# 0x00ac: push $v0                    # Store digit on the stack
+1ee10002 c1e10000 
+
+# 0x00b4: slt  $t1, $v0, $a0          # (n > digit)?
+77102000 
+
+# 0x00b8: beq  $t1, $zero, exit_prnt  # Branch if we don't have the condition
+d70100cc 
+
+# 0x00bc: li   $a1, 10                # Set the second input
+0301000a 
+
+# 0x00c0: jal  quotient               # Call procedure quotient(n,10)
+ff030100 
+
+# 0x00c4: addi $a0, $v0, 0            # Set the input
+02110000 
+
+# 0x00c8: jal  print_decimal_number   # Call procedure print_decimal_number(n/10)
+ff03007c 
+
+# 0x00cc: pop  $t0                    # Load digit from the stack
+a6e10000 0ee10002 
+
+# 0x00d4: addi $t0, $t0, ZERO         # Set the char digit + '0'
+06610030 
+
+# 0x00d8: sb   $t0, 0($s0)            # putchar(digit + '0')
+b6a10000 
+
+# 0x00dc: pop  $ra                    # Load the return address
+afe10000 0ee10002 
+
+# 0x00e4: jr   $ra                    # Return to caller
+f000f000 
+
+# 0x00e8: j    if_rem			      			# Branch to beginning of loop
+f00100f0 
+
+# 0x00ec: sub  $a0, $a0, $a1 					# a = a - b
+12203000 
+
+# 0x00f0: slt  $t0, $a0, $a1 					# (a < b) = !(a >= b)
+76203000 
+
+# 0x00f4: beq  $t0, $zero, loop_rem 	# Branch if terminating condition
+d60100ec 
+
+# 0x00f8: addi $v0, $a0, 0 		  			# Move 'a' into the result
+01210000 
+
+# 0x00fc: jr   $ra			        			# Return to caller
+f000f000 
+
+# 0x0100: li   $v0, 0                 # Initialize loop counter
+01010000 
+
+# 0x0104: j    if_qtnt                # Branch to beginning of loop
+f0010110 
+
+# 0x0108: sub  $a0, $a0, $a1 		      # a = a - b
+12203000 
+
+# 0x010c: addi $v0, $v0, 1            # count += 1
+01110001 
+
+# 0x0110: slt  $t1, $a0, $a1 		      # (a < b) = !(a >= b)
+77203000 
+
+# 0x0114: beq  $t1, $zero, loop_qtnt  # Branch if terminating condition
+d7010108 
+
+# 0x0118: jr   $ra			              # Return to caller
+f000f000 

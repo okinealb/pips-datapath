@@ -1,0 +1,26 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: nop                 # No operation
+11100000 
+
+# 0x0004: li  $t0, 0          # Load in 0 to $t0 = 0
+06010000 
+
+# 0x0008: j   one             # Jump to label one
+f0010014 
+
+# 0x000c: li   $t1, 8         # Load in 8 to $t1 = 8
+07010008 
+
+# 0x0010: jr   $ra            # Return to caller
+f000f000 
+
+# 0x0014: addi $t0, $t0, 4    # Add 4 to $t0 = 4
+06610004 
+
+# 0x0018: jal  two            # Jump and link to procedure two
+ff03000c 
+
+# 0x001c: nop                 # Do nothing
+11100000 

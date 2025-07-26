@@ -1,0 +1,278 @@
+v2.0 raw
+# This file holds the microprogram data that you should load into your
+# datapath's Microprogram ROM. Each row holds a 16-bit value that you will
+# break into control signals to execute an instruction with a given opcode.
+# As you implement additional opcodes you will need to change the hexadecimal
+# values below. Don't forget to add comments that describe the control signals
+# each opcode is configured to send.
+
+
+# Bit field | What does it do?
+#  0:          RegWrite      (1 bit)
+#  1:          ALU A Invert  (1 bit)
+#  2:          ALU B Invert  (1 bit)
+#  3:          ALU Carry In  (1 bit)
+#  4-6:        ALU Op        (3 bits)
+#  7:          Jump?         (1 bit)
+#  8:          Branch?       (1 bit)
+#  9:          Read r0       (1 bit)
+# 10:          Inv zero      (1 bit)
+# 11:          MemWrite      (1 bit)
+# 12:          MemSize       (1 bit)
+# 13:          MemtoReg      (1 bit)
+
+# Opcode 0: add
+# RegWrite      (0):   1
+# A invert      (1):   0
+# B invert      (2):   0
+# Carry         (3):   0
+# Operation   (4-6): 000
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0000 0000 0001
+0001
+
+# Opcode 1: sub
+# RegWrite      (0):   1
+# A invert      (1):   0
+# B invert      (2):   1
+# Carry In      (3):   1
+# Operation   (4-6): 000
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0000 0000 1101
+000d
+
+# Opcode 2: and
+# RegWrite      (0):   1
+# A invert      (1):   0
+# B invert      (2):   0
+# Carry         (3):   0
+# Operation   (4-6): 001
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0000 0001 0001
+0011
+
+# Opcode 3: or
+# RegWrite      (0):   1
+# A invert      (1):   0
+# B invert      (2):   0
+# Carry         (3):   0
+# Operation   (4-6): 010
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0000 0010 0001
+0021
+
+# Opcode 4: nand
+# RegWrite      (0):   1
+# A invert      (1):   1
+# B invert      (2):   1
+# Carry         (3):   0
+# Operation   (4-6): 010
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0000 0010 0111
+0027
+
+# Opcode 5: nor
+# RegWrite      (0):   1
+# A invert      (1):   1
+# B invert      (2):   1
+# Carry         (3):   0
+# Operation   (4-6): 001
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0000 0001 0111
+0017
+
+# Opcode 6: xor
+# RegWrite      (0):   1
+# A invert      (1):   0
+# B invert      (2):   0
+# Carry         (3):   0
+# Operation   (4-6): 011
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0000 0011 0001
+0031
+
+# Opcode 7: slt
+# RegWrite      (0):   1
+# A invert      (1):   0
+# B invert      (2):   0
+# Carry In      (3):   0
+# Operation   (4-6): 100
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0000 0100 0001
+0041
+
+# Opcode 8: sltu
+# RegWrite      (0):   1
+# A invert      (1):   0
+# B invert      (2):   0
+# Carry In      (3):   0
+# Operation   (4-6): 101
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0000 0101 0001
+0051
+
+# Opcode 9: lb
+# RegWrite      (0):   1
+# A invert      (1):   0
+# B invert      (2):   0
+# Carry In      (3):   0
+# Operation   (4-6): 000
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   1
+# 0010 0000 0000 0001
+2001
+
+# Opcode 10: lw
+# RegWrite      (0):   1
+# A invert      (1):   0
+# B invert      (2):   0
+# Carry In      (3):   0
+# Operation   (4-6): 000
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   1
+# MemtoReg     (13):   1
+# 0011 0000 0000 0001
+3001
+
+# Opcode 11: sb
+# RegWrite      (0):   0
+# A invert      (1):   0
+# B invert      (2):   0
+# Carry In      (3):   0
+# Operation   (4-6): 000
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   1
+# Inv zero     (10):   0
+# MemWrite     (11):   1
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 1010 0000 0000
+0a00
+
+# Opcode 12: sw
+# RegWrite      (0):   0
+# A invert      (1):   0
+# B invert      (2):   0
+# Carry In      (3):   0
+# Operation   (4-6): 000
+# Jump?         (7):   0
+# Branch?       (8):   0
+# Read r0       (9):   1
+# Inv zero     (10):   0
+# MemWrite     (11):   1
+# MemSize      (12):   1
+# MemtoReg     (13):   0
+# 0001 1010 0000 0000
+1a00
+
+# Opcode 13: beq
+# RegWrite      (0):   0
+# A invert      (1):   0
+# B invert      (2):   1
+# Carry In      (3):   1
+# Operation   (4-6): 000
+# Jump?         (7):   0
+# Branch?       (8):   1
+# Read r0       (9):   1
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0011 0000 1100
+030c
+
+# Opcode 14: bne
+# RegWrite      (0):   0
+# A invert      (1):   0
+# B invert      (2):   1
+# Carry In      (3):   1
+# Operation   (4-6): 000
+# Jump?         (7):   0
+# Branch?       (8):   1
+# Read r0       (9):   1
+# Inv zero     (10):   1
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0111 0000 1100
+070c
+
+# Opcode 15: j
+# RegWrite      (0):   1
+# A invert      (1):   0
+# B invert      (2):   0
+# Carry In      (3):   0
+# Operation   (4-6): 000
+# Jump?         (7):   1
+# Branch?       (8):   0
+# Read r0       (9):   0
+# Inv zero     (10):   0
+# MemWrite     (11):   0
+# MemSize      (12):   0
+# MemtoReg     (13):   0
+# 0000 0000 1000 0001
+0081

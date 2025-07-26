@@ -1,0 +1,26 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: nop                 # No operation
+11100000 
+
+# 0x0004: li  $t0, 4          # load 4 into $t0
+06010004 
+
+# 0x0008: li  $t1, 3          # load 3 into $t1
+07010003 
+
+# 0x000c: j   test            # go to the test
+f001001c 
+
+# 0x0010: beq $t0, $t1, good  # jump to good if 4 == 3 (not taken)
+d6710010 
+
+# 0x0014: li  $t0, 5          # load 5 into $t0 if it works
+06010005 
+
+# 0x0018: nop                 # do nothing
+11100000 
+
+# 0x001c: beq $t0, $t0, good  # Jump to label good if 4 == 4 (taken)
+d6610010 

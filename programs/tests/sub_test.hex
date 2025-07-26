@@ -1,0 +1,17 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: li $s0, 12         # Load a 12 into $s0
+0a01000c 
+
+# 0x0004: li $s3,  4         # Load a 4 into $s3
+0d010004 
+
+# 0x0008: sub $s1, $s0, $s3  # Store $s0 - $s0 into $s1 == 8 (0x8)
+1ba0d000 
+
+# 0x000c: sub $s2, $s1, $s3  # Store $s1 - $s1 into $s2 == 4 (0x4)
+1cb0d000 
+
+# 0x0010: sub $s3, $s2, $s3  # Store $s2 - $s2 into $s3 == 0 (0x0)
+1dc0d000 

@@ -1,0 +1,14 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: nop                   # No Operation
+11100000 
+
+# 0x0004: li  $t0, 0            # load 0 into t0 $t0 = 0
+06010000 
+
+# 0x0008: j   add               # Jump to add label
+f001000c 
+
+# 0x000c: addi $t0, $t0, 4      # Add to t0 $t0 = 4 (0x4)
+06610004 

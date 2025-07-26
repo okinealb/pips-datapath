@@ -1,0 +1,26 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: li $s0, 1         # Load a 1 into $s0
+0a010001 
+
+# 0x0004: li $s1, 2         # Load a 2 into $s1
+0b010002 
+
+# 0x0008: li $s2, 4         # Load a 4 into $s2
+0c010004 
+
+# 0x000c: li $s3, 8         # Load a 8 into $s3
+0d010008 
+
+# 0x0010: xor $s0, $zero, $s0  # Store $zero xor $s0 into $s0 == 1 (0x1)
+6a00a000 
+
+# 0x0014: xor $s1, $zero, $s1  # Store $zero xor $s1 into $s1 == 2 (0x2)
+6b00b000 
+
+# 0x0018: xor $s2, $zero, $s2  # Store $zero xor $s2 into $s2 == 4 (0x4)
+6c00c000 
+
+# 0x001c: xor $s3, $zero, $s3  # Store $zero xor $s3 into $s3 == 8 (0x8)
+6d00d000 

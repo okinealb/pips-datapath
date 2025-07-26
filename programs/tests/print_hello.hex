@@ -1,0 +1,44 @@
+v2.0 raw
+# This is an automatically-generated PIPS machine code file
+
+# 0x0000: nop # First instruction does not execute
+11100000 
+
+# 0x0004: li $s0, TERMINAL
+0a01ff10 
+
+# 0x0008: li $t0, 0x48   # Load ASCII value for 'H'
+06010048 
+
+# 0x000c: sb $t0, 0($s0) # Print 'H'
+b6a10000 
+
+# 0x0010: li $t0, 0x65   # Load ASCII value for 'e'
+06010065 
+
+# 0x0014: sb $t0, 0($s0) # Print 'e'
+b6a10000 
+
+# 0x0018: li $t0, 0x6c   # Load ASCII value for 'l'
+0601006c 
+
+# 0x001c: sb $t0, 0($s0) # Print 'l'
+b6a10000 
+
+# 0x0020: sb $t0, 0($s0) # Print 'l'
+b6a10000 
+
+# 0x0024: li $t0, 0x6f   # Load ASCII value for 'o'
+0601006f 
+
+# 0x0028: sb $t0, 0($s0) # Print 'o'
+b6a10000 
+
+# 0x002c: li $t0, 0x0a   # Load ASCII value for newline
+0601000a 
+
+# 0x0030: sb $t0, 0($s0) # Print newline
+b6a10000 
+
+# 0x0034: j  HALT        # Stop execution
+f001ff00 
